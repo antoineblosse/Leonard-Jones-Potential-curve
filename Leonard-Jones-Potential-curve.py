@@ -1,23 +1,15 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt                                                 
 import numpy as np
 
-## Create functions and set domain length
-x = np.arange(0.0, 2.0, 0.01)
-y = x**2
-dy = 2*x
+x = np.arange(3.0, 8.0, 0.01)          ## [3.0-8.0] is range for x-axis; [0.0-2.99] not part of range, since vertical asymptote at point 0.0
+                                       ## 0.01 is the interval between each succesive point drawn on the curve
+y = 4*0.997*((3.4/x)**12-(3.4/x)**6)   ##Leonard-Jones potential formula
 
-## Plot functions and a point where they intersect
-plt.plot(x, y)
-plt.plot(x, dy)
-plt.plot(1, 1, 'or')
+plt.plot(x, y)                         ## Plot function
 
-## Config the graph
-plt.title('A Cool Graph')
-plt.xlabel('X')
-plt.ylabel('Y')
-#plt.ylim([0, 4])
-plt.grid(True)
-plt.legend(['y = x^2', 'y = 2x'], loc='upper left')
+## Label the graph
+plt.title('Modeling interactions between two Argon atoms')
+plt.xlabel('r')
+plt.ylabel('E')
 
-## Show the graph
-plt.show()
+plt.show()                             ## Show the graph
